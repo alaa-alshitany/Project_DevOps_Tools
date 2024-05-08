@@ -6,7 +6,7 @@ resource "tls_private_key" "ssh_key" {
 //save private key to s3 bucket
 resource "aws_s3_bucket_object" "private_key" {
   bucket = "lab2-env-bk "
-  key    = "private_key.pem
+  key    = "private_key.pem"
   content  = tls_private_key.ssh_key.private_key_pem   
 }
 //upload public key to s3 bucket 
