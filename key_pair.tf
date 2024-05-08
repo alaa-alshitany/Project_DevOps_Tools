@@ -3,15 +3,16 @@ resource "tls_private_key" "ssh_key" {
   algorithm = "RSA" 
   rsa_bits  = 2048  
 }
-//save private key locally
+//save private key to s3 bucket
 resource "local_file" "private_key" {
-  filename = "${path.module}/key.pem"  
-  content  = tls_private_key.ssh_key.private_key_pem  
-  file_permission = "0600"  
+  bucket = "lab2-env-bk "
+  key    = "private_key.pem
+  content  = tls_private_key.ssh_key.private_key_pem   
 }
-//upload public key to aws 
-resource "aws_key_pair" "ssh_key" {
-  key_name   = "ssh-key"  
+//upload public key to s3 bucket 
+resource "aws_key_pair" "public_key" {
+  bucket = "lab2-env-bk "
+  key_name   = "public_key.pub"  
   public_key = tls_private_key.ssh_key.public_key_openssh 
 }
 
