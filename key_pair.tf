@@ -16,3 +16,7 @@ resource "aws_s3_object" "public_key" {
   public_key = tls_private_key.ssh_key.public_key_openssh 
 }
 
+resource "aws_key_pair" "ssh_key" {
+  key_name   = "lab2-key"
+  public_key = tls_private_key.ssh_key.public_key_openssh
+}
