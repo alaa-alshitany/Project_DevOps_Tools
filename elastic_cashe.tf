@@ -1,6 +1,6 @@
 resource "aws_elasticache_subnet_group" "redis_subnet_group" {
   name       = "redis-subnet-group"
-  subnet_ids = [module.network_module.subnets["private_subnet_I"].id, module.network_module.subnets["private_subnet_II"].id]
+  subnet_ids = [module.network_module.subnets["private_subnet_1"].id, module.network_module.subnets["private_subnet_2"].id]
 
   tags = {
     Name = "${var.common_resource_name}_Elasticache_Group"
