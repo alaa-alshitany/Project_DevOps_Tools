@@ -1,6 +1,6 @@
 terraform {
    backend "s3" {
-     bucket         = "lab2-env-bk" 
+     bucket         = "simple-project-bk" 
      key            = "terraform.tfstate" 
      region         = "eu-west-2"
      encrypt        = true
