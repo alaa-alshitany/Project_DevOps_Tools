@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_instance" "bastion" {
-  ami           = "ami-07caf09b362be10b8" 
+  ami           = "ami-008ea0202116dbc56" 
   instance_type = var.machine_data["type"]    
   subnet_id     = module.network_module.subnets["public_subnet_1"].id 
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
@@ -22,7 +22,7 @@ resource "aws_instance" "bastion" {
 }
 
 resource "aws_instance" "application" {
-  ami           = "ami-07caf09b362be10b8"  
+  ami           = "ami-008ea0202116dbc56"  
   instance_type = var.machine_data["type"]    
   subnet_id     = module.network_module.subnets["private_subnet_1"].id  
   vpc_security_group_ids = [aws_security_group.allow_ssh_and_3000.id]
