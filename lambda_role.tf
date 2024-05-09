@@ -27,7 +27,7 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy" {
 
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = "lab2-env-bk"
+  bucket = "simple-project-bk"
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.send_email.arn
