@@ -1,5 +1,5 @@
 locals {
-  ssh_private_key = "s3://lab2-env-bk/private_key.pem" 
+  ssh_private_key = "s3://simple-proj-bk/private_key.pem" 
 }
 
 resource "aws_instance" "bastion" {
@@ -14,7 +14,7 @@ resource "aws_instance" "bastion" {
  user_data = <<-EOF
     #!/bin/bash
     mkdir -p /home/ec2-user/.ssh
-    aws s3 cp s3://lab2-env-bk/private_key.pem /home/ec2-user/.ssh/id_rsa
+    aws s3 cp s3://simple-proj-bk/private_key.pem /home/ec2-user/.ssh/id_rsa
     chmod 600 /home/ec2-user/.ssh/id_rsa
     chown ec2-user:ec2-user /home/ec2-user/.ssh/id_rsa
   EOF
