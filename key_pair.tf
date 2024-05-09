@@ -6,14 +6,14 @@ resource "tls_private_key" "ssh_key" {
 
 // Save private key to S3 bucket
 resource "aws_s3_object" "private_key" {
-  bucket = "lab2-env-bk"
+  bucket = "simple-proj-bk"
   key    = "private_key.pem"
   content  = tls_private_key.ssh_key.private_key_pem
 }
 
 // Upload public key to S3 bucket
 resource "aws_s3_object" "public_key" {
-  bucket = "lab2-env-bk"
+  bucket = "simple-proj-bk"
   key    = "public_key.pub" 
   content = tls_private_key.ssh_key.public_key_openssh  
 }
