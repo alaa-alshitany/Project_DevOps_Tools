@@ -26,7 +26,7 @@ pipeline {
 
     stage('Clone Repository') {
       steps {
-        git branch: 'main', url: 'https://github.com/alaa-alshitany/Task-on-terraform-jenkins-ansible-docker-AWS-'
+        git branch: 'main', url: 'https://github.com/alaa-alshitany/Project_DevOps_Tools'
       }
     }
 
