@@ -11,10 +11,10 @@ resource "aws_instance" "bastion" {
   tags = {
     Name = "${var.common_resource_name}_Bastion"
   }
- user_data = <<-EOF
+  user_data = <<-EOF
     #!/bin/bash
     mkdir -p /home/ec2-user/.ssh
-    aws s3 cp s3://simple-proj-bk/private_key.pem /home/ec2-user/.ssh/id_rsa
+    echo "${local.ssh_private_key}" > /home/ec2-user/.ssh/id_rsa
     chmod 600 /home/ec2-user/.ssh/id_rsa
     chown ec2-user:ec2-user /home/ec2-user/.ssh/id_rsa
   EOF
