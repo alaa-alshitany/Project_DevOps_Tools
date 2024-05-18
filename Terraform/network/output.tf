@@ -13,3 +13,7 @@ output "cidr_block" {
   value = aws_vpc.main.cidr_block
   description = "cidr_block"
 }
+
+output "subnets_data" {
+  value = var.subnets_data
+}
