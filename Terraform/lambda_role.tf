@@ -26,7 +26,7 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy" {
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = "simple-proj-bk"
+  bucket = "simple-project-bk"
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.send_email.arn
@@ -39,5 +39,5 @@ resource "aws_lambda_permission" "allow_bucket" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.send_email.function_name
   principal     = "s3.amazonaws.com"
-  source_arn    = "arn:aws:s3:::simple-proj-bk"
+  source_arn    = "arn:aws:s3:::simple-project-bk"
 }
