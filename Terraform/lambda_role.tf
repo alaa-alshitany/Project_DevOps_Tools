@@ -25,6 +25,10 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
+resource "aws_s3_bucket" "simple_proj_bk" {
+  bucket = "simple-proj-bk"
+  acl    = "private"
+}
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
   bucket = "simple-proj-bk"

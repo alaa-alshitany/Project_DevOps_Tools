@@ -1,5 +1,5 @@
 locals {
-  ssh_private_key = "s3://simple-proj-bk/private_key.pem" 
+  ssh_private_key = file("${path.module}/key.pem")
 }
 
 resource "aws_instance" "bastion" {
