@@ -1,7 +1,7 @@
 vpc_cidr          = "10.0.0.0/16"
 region            = "eu-central-1"
 ses_email_reciever = "@gmail.com"
-common_resource_name = "lab2"
+common_resource_name = "Production"
 environment = "Prod"
 machine_data={
     type="t2.micro",
