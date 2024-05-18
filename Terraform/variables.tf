@@ -31,13 +31,14 @@ variable machine_data {
   description = "description"
 }
 
-variable subnets_data {
-  type        = list(object({
-    name = string,
-    cidr = string,
-    type = string,
-    az = string,
-    map_public_ip_on_launch = bool
+variable "subnets_data" {
+  type = list(object({
+    name                     = string
+    cidr                     = string
+    type                     = string
+    az                       = string
+    map_public_ip_on_launch  = bool
   }))
   description = "description"
 }
+
