@@ -36,7 +36,8 @@ variable subnets_data {
     name = string,
     cidr = string,
     type = string,
-    az = string
+    az = string,
+    map_public_ip_on_launch = bool
   }))
   description = "description"
 }
