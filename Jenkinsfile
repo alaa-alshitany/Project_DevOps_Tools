@@ -39,16 +39,7 @@ pipeline {
         }
       }
     }
-  stage('Refresh Terraform') {
-        steps {
-          script {
-            dir('Terraform'){
-            def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
-            sh "terraform refresh -var-file=$tfVarsFile"
-          }
-        }
-      }
-      }
+
     stage('Plan Terraform') {
       steps {
         script {
