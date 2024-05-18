@@ -8,7 +8,7 @@ machine_data={
     public_ip=true
 }
 
-subnets_details=[
+subnets_data=[
     {
         name="public_subnet_1",
         cidr="10.0.1.0/24",

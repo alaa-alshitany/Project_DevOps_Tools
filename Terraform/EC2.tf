@@ -8,6 +8,7 @@ resource "aws_instance" "bastion" {
   subnet_id     = module.network_module.subnets["public_subnet_1"].id 
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
   key_name      = aws_key_pair.ssh_key.key_name
+  associate_public_ip_address = true
   tags = {
     Name = "${var.common_resource_name}_Bastion"
   }
