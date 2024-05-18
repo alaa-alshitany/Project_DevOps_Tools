@@ -2,7 +2,7 @@ terraform {
    backend "s3" {
      bucket         = "simple-project-bk" 
      key            = "terraform.tfstate" 
-     region         = "ca-central-1"
+     region         = "eu-west-2"
      encrypt        = true
      dynamodb_table = "simple-proj-tb"
    }
