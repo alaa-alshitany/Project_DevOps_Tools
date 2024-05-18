@@ -39,7 +39,15 @@ pipeline {
         }
       }
     }
-
+  stage('Refresh Terraform') {
+        steps {
+          script {
+            dir('Terraform'){
+            sh 'terraform refresh'
+          }
+        }
+      }
+      }
     stage('Plan Terraform') {
       steps {
         script {
