@@ -44,7 +44,7 @@ pipeline {
           script {
             dir('Terraform'){
             def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
-            sh 'terraform refresh -var-file=$tfVarsFile'
+            sh "terraform refresh -var-file=$tfVarsFile"
           }
         }
       }
