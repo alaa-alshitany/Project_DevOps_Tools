@@ -43,7 +43,8 @@ pipeline {
         steps {
           script {
             dir('Terraform'){
-            sh 'terraform refresh'
+            def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
+            sh 'terraform refresh -var-file=$tfVarsFile'
           }
         }
       }
