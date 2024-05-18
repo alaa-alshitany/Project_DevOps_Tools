@@ -51,24 +51,24 @@ pipeline {
       }
     }
 
-    stage('Apply Terraform') {
-      steps {
-        script {
-          dir('Terraform'){
-          def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
-          sh "terraform apply -auto-approve -var-file=$tfVarsFile"
-        }
-      }
-    }
-    }
-    //  stage('Destroy Resourses'){
-    //     steps{
-    //          script {
-    //         def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
-    //         sh "terraform destroy --auto-approve -var-file=$tfVarsFile"
+    // stage('Apply Terraform') {
+    //   steps {
+    //     script {
+    //       dir('Terraform'){
+    //       def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
+    //       sh "terraform apply -auto-approve -var-file=$tfVarsFile"
     //     }
     //   }
     // }
+    // }
+     stage('Destroy Resourses'){
+        steps{
+             script {
+            def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
+            sh "terraform destroy --auto-approve -var-file=$tfVarsFile"
+        }
+      }
+    }
     
   }
 }
