@@ -14,10 +14,9 @@ resource "aws_instance" "bastion" {
   }
   user_data = <<-EOF
     #!/bin/bash
-    sudo mkdir -p /home/ubuntu/.ssh
-    echo "${local.ssh_private_key}" | sudo tee /home/ubuntu/.ssh/id_rsa
-    sudo chmod 600 /home/ubuntu/.ssh/id_rsa
-    sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa
+    echo '${tls_private_key.ssh_key.private_key_pem}' > /home/ubuntu/${var.ssh_key_name}.pem
+    chmod 400 /home/ubuntu/key.pem
+    chown ubuntu:ubuntu /home/ubuntu/key.pem
   EOF
 }
 
