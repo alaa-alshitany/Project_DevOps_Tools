@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent label 'jenkins-public-slave'
 
   parameters {
     choice(
@@ -10,7 +10,7 @@ pipeline {
   }
 
   environment {
-    AWS_CREDENTIALS_JSON = credentials('49889777-1b0c-4158-8ada-9ac907f1877f')
+    AWS_CREDENTIALS_JSON = credentials('aws-json-keys')
   }
 
   stages {
