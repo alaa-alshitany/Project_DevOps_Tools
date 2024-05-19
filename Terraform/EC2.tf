@@ -1,7 +1,3 @@
-locals {
-  ssh_private_key = file("${path.module}/key.pem")
-}
-
 resource "aws_instance" "bastion" {
   ami           = "ami-053a617c6207ecc7b"
   instance_type = var.machine_data["type"]    
