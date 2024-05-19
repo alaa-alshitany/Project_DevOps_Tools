@@ -65,11 +65,12 @@ pipeline {
      stage('Destroy Resourses'){
         steps{
              script {
+              dir('Terraform'){
             def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
             sh "terraform destroy --auto-approve -var-file=$tfVarsFile"
         }
       }
     }
-    
+  }
   }
 }
