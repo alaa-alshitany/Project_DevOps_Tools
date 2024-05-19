@@ -14,7 +14,7 @@ resource "aws_instance" "bastion" {
   }
   user_data = <<-EOF
     #!/bin/bash
-    echo '${tls_private_key.ssh_key.private_key_pem}' > /home/ubuntu/${var.ssh_key_name}.pem
+    echo '${tls_private_key.ssh_key.private_key_pem}' > /home/ubuntu/key.pem
     chmod 400 /home/ubuntu/key.pem
     chown ubuntu:ubuntu /home/ubuntu/key.pem
   EOF
