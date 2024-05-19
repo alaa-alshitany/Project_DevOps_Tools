@@ -1,11 +1,9 @@
 ---
-# tasks file for Jenkins-Master
-
-- name: Update Cache
+- name: Update APT cache
   apt:
     update_cache: yes
 
-- name: Install curl, gnupg
+- name: Install required packages (curl, gnupg, unzip)
   apt:
     name: "{{ item }}"
     state: present
@@ -20,12 +18,12 @@
 - name: Add Jenkins APT repository
   shell: sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
-- name: Install Java
+- name: Install OpenJDK 11 JRE
   apt:
     name: openjdk-11-jre
     state: present
 
-- name: Update Cache
+- name: Update APT cache after installing dependencies
   apt:
     update_cache: yes
 
@@ -39,11 +37,10 @@
     name: jenkins
     state: started
 
-- name: Get Jenkins initial admin password
+- name: Retrieve Jenkins initial admin password
   shell: cat /var/lib/jenkins/secrets/initialAdminPassword
   register: jenkins_password
 
 - name: Print Jenkins initial admin password
   debug:
     msg: "Jenkins initial admin password is {{ jenkins_password.stdout }}"
-
