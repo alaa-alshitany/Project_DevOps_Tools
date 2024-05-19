@@ -1,6 +1,7 @@
 pipeline {
-  agent label 'jenkins-public-slave'
-
+  agent {
+    label 'jenkins-public-slave'
+  }
   parameters {
     choice(
       name: 'ENVIRONMENT',
