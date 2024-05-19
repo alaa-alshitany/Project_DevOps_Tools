@@ -1,7 +1,0 @@
----
-- hosts: app
-  name: test playbook
-  remote_user: ubuntu
-  become: yes
-  roles:
-    - jenkins_slave

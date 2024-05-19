@@ -1,2 +1,5 @@
 [jenkins_master]
 18.130.134.184
+
+[jenkins-public-slave]
+18.171.207.122	
