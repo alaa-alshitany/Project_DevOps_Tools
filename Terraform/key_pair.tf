@@ -20,7 +20,6 @@ resource "aws_key_pair" "ssh_key" {
 output "private_key_pem" {
   description = "The private key generated for SSH access."
   value       = tls_private_key.ssh_key.private_key_pem
-  sensitive   = true
 }
 
 output "public_key_openssh" {

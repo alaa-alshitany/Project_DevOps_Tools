@@ -1,5 +1,8 @@
 [jenkins_master]
-18.130.134.184
+13.40.25.36
 
 [jenkins-public-slave]
 18.171.207.122	
+
+[application]
+ip-10-0-3-138.eu-west-2.compute.internal
