@@ -2,6 +2,15 @@ resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow ssh from 0.0.0.0/0"
   vpc_id      = module.network_module.vpc_id
+
+  ingress {
+    description = "Allow SSH from EC2 Instance Connect service IP addresses"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["3.8.37.24/29"] 
+  }
+
    ingress {
     description     = "Allow SSH from anywhere"
     from_port       = 22
