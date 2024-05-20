@@ -31,7 +31,7 @@ resource "aws_security_group" "allow_ssh_and_3000" {
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
-    cidr_blocks     = [module.network_module.vpc_id.vpc_cidr]  
+    cidr_blocks     = [module.network_module.vpc_cidr]  
   }
 
   ingress {
@@ -39,7 +39,7 @@ resource "aws_security_group" "allow_ssh_and_3000" {
     from_port       = 3000
     to_port         = 3000
     protocol        = "tcp"
-    cidr_blocks     = [module.network_module.vpc_id.vpc_cidr]  
+    cidr_blocks     = [module.network_module.vpc_cidr]  
   }
 
   egress {
@@ -52,4 +52,5 @@ resource "aws_security_group" "allow_ssh_and_3000" {
     Name = "Allow SSH and Port 3000 from VPC"
   }
 }
+
 
