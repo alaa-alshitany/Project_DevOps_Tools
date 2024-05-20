@@ -17,14 +17,3 @@ resource "aws_key_pair" "ssh_key" {
   public_key = tls_private_key.ssh_key.public_key_openssh
 }
 
-resource "null_resource" "print_private_key" {
-  provisioner "local-exec" {
-    command = "echo '${tls_private_key.ssh_key.private_key_pem}'"
-  }
-}
-
-
-output "public_key_openssh" {
-  description = "The public key generated for SSH access."
-  value       = tls_private_key.ssh_key.public_key_openssh
-}

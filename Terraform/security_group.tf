@@ -42,6 +42,12 @@ resource "aws_security_group" "allow_ssh_and_3000" {
     cidr_blocks     = [module.network_module.cidr_block]  
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   tags = {
     Name = "Allow SSH and Port 3000 from VPC"
   }
