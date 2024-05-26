@@ -25,6 +25,26 @@
     - gnupg
     - unzip
 
+- name: Create ubuntu Slave Folder
+  file:
+    path: "jenkins_slave"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes
+
+- name: Add ubuntu user to docker group
+  user:
+    name: ubuntu
+    groups: docker
+    append: yes
+
 - name: Download and install Terraform
   get_url:
     url: "https://releases.hashicorp.com/terraform/1.8.3/terraform_1.8.3_linux_amd64.zip"
