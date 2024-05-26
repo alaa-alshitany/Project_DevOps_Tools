@@ -21,9 +21,9 @@ This pipeline automates the creation and configuration of infrastructure, ensuri
 ## 📋 Prerequisites
 - AWS account with S3 bucket and dynamodb table.
 - Initialize the remote backend.
-```
+
 [Terraform/backend.tf](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Terraform/backend.tf)
-``` 
+
 
 - Make 2 Ansible Roles : 
    - one for [Jenkins-Master](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Ansible/Jenkins-Master/README.md)
