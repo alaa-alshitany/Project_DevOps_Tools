@@ -1,8 +1,8 @@
 [jenkins_master]
-13.40.25.36
+18.170.39.92
 
 [jenkins-public-slave]
-18.171.207.122	
+35.178.86.39
 
 [application]
-ip-10-0-3-138.eu-west-2.compute.internal
+10.0.3.137 ansible_user=ubuntu ansible_ssh_private_key_file=../Terraform/key.pem ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -i ./key.pem ubuntu@52.210.205.249"'
