@@ -22,21 +22,21 @@ resource "aws_db_instance" "rds_db" {
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name
 }
 
-resource "aws_secretsmanager_secret" "rds_secret" {
-  name = "rds_credentials"
+# resource "aws_secretsmanager_secret" "rds_secret" {
+#   name = "rds_credentials"
 
-  tags = {
-    Name = "${var.common_resource_name}_rds_credentials"
-  }
-}
+#   tags = {
+#     Name = "${var.common_resource_name}_rds_credentials"
+#   }
+# }
 
-resource "aws_secretsmanager_secret_version" "rds_secret_version" {
-  secret_id = aws_secretsmanager_secret.rds_secret.id
-  secret_string = jsonencode({
-    username = aws_db_instance.rds_db.username
-    password = aws_db_instance.rds_db.password
-    db_name  = aws_db_instance.rds_db.db_name
-    host     = aws_db_instance.rds_db.endpoint
-    port     = aws_db_instance.rds_db.port
-  })
-}
+# resource "aws_secretsmanager_secret_version" "rds_secret_version" {
+#   secret_id = aws_secretsmanager_secret.rds_secret.id
+#   secret_string = jsonencode({
+#     username = aws_db_instance.rds_db.username
+#     password = aws_db_instance.rds_db.password
+#     db_name  = aws_db_instance.rds_db.db_name
+#     host     = aws_db_instance.rds_db.endpoint
+#     port     = aws_db_instance.rds_db.port
+#   })
+# }
