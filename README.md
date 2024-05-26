@@ -27,4 +27,5 @@ This pipeline automates the creation and configuration of infrastructure, ensuri
    - one for [Jenkins-Master](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Ansible/Jenkins-Master/README.md)
    - one to be as [Jenkins-Slave](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Ansible/Jenkins-Slave/README.md)
 
-- 
+- Create 2 ec2 on your AWS account to be (jenkins master & Slave)
+![](<Screenshot from 2024-05-20 01-26-50.png>) 
