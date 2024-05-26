@@ -29,12 +29,12 @@ resource "aws_route_table" "private_route_table" {
 
 resource "aws_route_table_association" "public_rt_associations" {
   count          = 2
-  subnet_id      = aws_subnet.subnets["public_subnet_1"].id
+  subnet_id      = aws_subnet.subnets["public_subnet_${count.index + 1}"].id
   route_table_id = aws_route_table.public_route_table.id
 }
 
 resource "aws_route_table_association" "private_rt_associations" {
   count          = 2
-  subnet_id      = aws_subnet.subnets["private_subnet_1"].id
+  subnet_id      = aws_subnet.subnets["private_subnet_${count.index + 1}"].id
   route_table_id = aws_route_table.private_route_table.id
 }
