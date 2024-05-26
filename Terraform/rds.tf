@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "database_subnet_group" {
-  name       = "cloud_pd44_database_subnet_group"
+  name       = "database_subnet_group"
   subnet_ids = [module.network_module.subnets["private_subnet_1"].id, module.network_module.subnets["private_subnet_2"].id]
   
   tags = {
@@ -18,6 +18,7 @@ resource "aws_db_instance" "rds_db" {
   password             = "alaa12345"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
+  vpc_security_group_ids = [aws_security_group.rds_sg.id]
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name
 }
 
