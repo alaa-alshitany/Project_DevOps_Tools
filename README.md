@@ -19,23 +19,23 @@ This pipeline automates the creation and configuration of infrastructure, ensuri
 
 
 ## 📋 Prerequisites
-- AWS account with S3 bucket and dynamodb table.
-- Initialize the remote backend.
+- **AWS account with S3 bucket and dynamodb table.**
+- **Initialize the remote backend.**
       [Terraform/backend.tf](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Terraform/backend.tf)
 
-- Make 2 Ansible Roles : 
+- **Make 2 Ansible Roles :** 
    - one for [Jenkins-Master](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Ansible/Jenkins-Master/README.md)
    - one to be as [Jenkins-Slave](https://github.com/alaa-alshitany/Project_DevOps_Tools/blob/main/Ansible/Jenkins-Slave/README.md)
 
-- Create 2 ec2 on your AWS account to be (jenkins master & Slave)
+- **Create 2 ec2 on your AWS account to be (jenkins master & Slave)**
 ![Screenshot from 2024-05-20 01-26-50](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/9e014459-5b88-4803-83a8-72acb572fe2a)
 
-- Configure Master One.
+- **Configure Master One.**
 ![Screenshot from 2024-05-20 01-18-48](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/20c9f554-7a8d-4a9c-9212-097cfb05d6df)
 
 ![Screenshot from 2024-05-20 01-19-22](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/b8b10307-d5bc-4ce3-9ef6-cf076c2a090a)
 
-- Configure Slave One.
+- **Configure Slave One.**
 ![Screenshot from 2024-05-20 01-47-35](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/156d3b38-4b04-4436-8438-dcfed3da53c5)
 
 ![Screenshot from 2024-05-20 01-47-44](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/d0ce69fd-2817-46db-bd8a-5506aaf6f890)
