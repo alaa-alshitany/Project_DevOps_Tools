@@ -39,7 +39,7 @@ resource "aws_security_group" "allow_ssh_and_3000" {
     from_port       = 3000
     to_port         = 3000
     protocol        = "tcp"
-    cidr_blocks     = [aws_security_group.sg-alb]  
+    security_groups = [ aws_security_group.sg-alb.id ]  
   }
 
   egress {
