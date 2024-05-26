@@ -10,6 +10,6 @@ This pipeline automates the creation and configuration of infrastructure, ensuri
 ## 🚀 Key Features
 - **Infrastructure as a Code (IaC) using **Terraform****
 - **CI/CD Orchestration using **Jenkins****      
-- **Configuration Management using  **Ansible** **
+- **Configuration Management using  **Ansible****
 - **Cloud Provider **AWS****
 - **Containerization using **Docker****                                         
