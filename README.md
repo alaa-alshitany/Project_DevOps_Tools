@@ -33,9 +33,20 @@ This pipeline automates the creation and configuration of infrastructure, ensuri
 ---
 
 ## 📜 Main Steps
-1. **Create jenkins pipeline to run terraform COde**
+1. **Create jenkins pipeline to run terraform Code**
   ![Screenshot from 2024-05-20 01-59-29](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/8a0703c5-02a8-4597-a7b3-ebbfbf0e33af)
 
   ![Screenshot from 2024-05-20 01-59-35](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/9074f5e3-44ed-4880-9d8c-f3353d2c352e)
 
   ![Screenshot from 2024-05-20 02-53-54](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/3e17f377-811c-49e0-9fdb-4ec97148a303)
+
+2. **Configure Ansible to run over private ips through Bastion**
+   ```
+   [application]
+10.0.3.132 ansible_user=ubuntu ansible_ssh_private_key_file=../Terraform/key.pem ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -i ../Terraform/key.pem ubuntu@54.154.222.120"'
+   ```
+
+3. **Write ansible script to configure ec2 to run as jenkins slaves**
+![Screenshot from 2024-05-26 10-19-37](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/28424e87-4f43-4cfb-be72-9ff5cb5aa762)
+
+![Screenshot from 2024-05-26 10-19-46](https://github.com/alaa-alshitany/Project_DevOps_Tools/assets/71197108/917726ef-e0db-443e-8f48-bb412ac0e64d)
