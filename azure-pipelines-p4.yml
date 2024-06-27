@@ -4,8 +4,8 @@ parameters:
   type: string
   default: 'dev'
   values:
-    - 'Dev_vars'
-    - 'Prod_vars'
+    - 'dev'
+    - 'prod'
 
 - name: ACTION
   displayName: 'Action'
