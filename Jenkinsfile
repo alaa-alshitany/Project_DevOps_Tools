@@ -45,7 +45,7 @@ pipeline {
       steps {
         script {
           dir('Terraform'){
-          def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
+          def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'dev.tfvars' : 'prod.tfvars'
           sh "terraform plan -var-file=$tfVarsFile"
         }
        }
@@ -56,7 +56,7 @@ pipeline {
     //   steps {
     //     script {
     //       dir('Terraform'){
-    //       def tfVarsFile = (params.ENVIRONMENT == 'dev') ? 'Dev_vars.tfvars' : 'Prod_vars.tfvars'
+    //       def tfVarsFile = (params.ENVIRONMENT == 'dev') ? ''dev.tfvars' : 'prod.tfvars'
     //       sh "terraform apply -auto-approve -var-file=$tfVarsFile"
     //     }
     //   }
